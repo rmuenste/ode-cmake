@@ -135,6 +135,7 @@ struct dxBody : public dObject {
     dMass mass;			// mass parameters about POR
     dMatrix3 invI;		// inverse of mass.I
     dReal invMass;		// 1 / mass.mass
+    dReal relMass;		// relative mass of the wrt the surrounding medium 
     dxPosR posr;			// position and orientation of point of reference
     dQuaternion q;		// orientation quaternion
     dVector3 lvel,avel;		// linear and angular velocity of POR

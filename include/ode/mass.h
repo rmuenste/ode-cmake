@@ -49,6 +49,8 @@ ODE_API void dMassSetParameters (dMass *, dReal themass,
 			 dReal I11, dReal I22, dReal I33,
 			 dReal I12, dReal I13, dReal I23);
 
+ODE_API void dMassSetRel(dMass *m, dReal *mrel, dReal densityS, dReal densityF);
+
 ODE_API void dMassSetSphere (dMass *, dReal density, dReal radius);
 ODE_API void dMassSetSphereTotal (dMass *, dReal total_mass, dReal radius);
 

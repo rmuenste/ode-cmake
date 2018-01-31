@@ -1049,6 +1049,13 @@ ODE_API const dReal * dBodyGetLinearVel (dBodyID);
 ODE_API const dReal * dBodyGetAngularVel (dBodyID);
 
 /**
+ * @brief Set the relative mass of a body.
+ * @ingroup bodies
+ */
+ODE_API void dBodySetRelMass(dBodyID b, const dReal *mass);
+
+
+/**
  * @brief Set the mass of a body.
  * @ingroup bodies
  */

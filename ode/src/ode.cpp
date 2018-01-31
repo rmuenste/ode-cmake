@@ -250,6 +250,7 @@ dxBody *dBodyCreate (dxWorld *w)
     b->invI[5] = 1;
     b->invI[10] = 1;
     b->invMass = 1;
+    b->relMass = 1.0;
     dSetZero (b->posr.pos,4);
     dSetZero (b->q,4);
     b->q[0] = 1;
@@ -498,6 +499,12 @@ void dBodySetMass (dBodyID b, const dMass *mass)
     b->invMass = dRecip(b->mass.mass);
 }
 
+void dBodySetRelMass (dBodyID b, const dReal *mass)
+{
+    dAASSERT (b && mass );
+
+    memcpy (&b->relMass,mass,sizeof(dReal));
+}
 
 void dBodyGetMass (dBodyID b, dMass *mass)
 {

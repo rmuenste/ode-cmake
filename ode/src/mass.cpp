@@ -121,6 +121,15 @@ void dMassSetSphere (dMass *m, dReal density, dReal radius)
         radius*radius*radius * density), radius);
 }
 
+void dMassSetRel(dMass *m, dReal *mrel, dReal densityS, dReal densityF)
+{
+  dReal v = m->mass / densityS;
+
+  dReal deltaRho = densityS - densityF;
+
+  *mrel = v * deltaRho;
+
+}
 
 void dMassSetSphereTotal (dMass *m, dReal total_mass, dReal radius)
 {
