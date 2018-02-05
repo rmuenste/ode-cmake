@@ -119,11 +119,15 @@ void dMassSetSphere (dMass *m, dReal density, dReal radius)
 {
     dMassSetSphereTotal (m, (dReal) ((REAL(4.0)/REAL(3.0)) * M_PI *
         radius*radius*radius * density), radius);
+    dReal v = (dReal) ((REAL(4.0)/REAL(3.0)) * M_PI *
+        radius*radius*radius); 
+    //printf("Volume %E Mass %f\n", v,m->mass);
 }
 
 void dMassSetRel(dMass *m, dReal *mrel, dReal densityS, dReal densityF)
 {
   dReal v = m->mass / densityS;
+  //printf("Volume %f \n", v);
 
   dReal deltaRho = densityS - densityF;
 

@@ -868,7 +868,7 @@ void dxQuickStepIsland_Stage0_Bodies(dxQuickStepperStage0BodiesCallContext *call
                 dxBody *b = *bodycurr;
                 if ((b->flags & dxBodyNoGravity) == 0) {
 #ifdef FEATFLOWLIB
-                    b->facc[0] += b->relMass * b->mass.mass * gravity_x;
+                    b->facc[0] += b->relMass * gravity_x;
 #else
                     b->facc[0] += b->mass.mass * gravity_x;
 #endif 
@@ -881,7 +881,7 @@ void dxQuickStepIsland_Stage0_Bodies(dxQuickStepperStage0BodiesCallContext *call
                 dxBody *b = *bodycurr;
                 if ((b->flags & dxBodyNoGravity) == 0) {
 #ifdef FEATFLOWLIB
-                    b->facc[1] += b->relMass * b->mass.mass * gravity_y;
+                    b->facc[1] += b->relMass * gravity_y;
 #else
                     b->facc[1] += b->mass.mass * gravity_y;
 #endif 
@@ -894,7 +894,8 @@ void dxQuickStepIsland_Stage0_Bodies(dxQuickStepperStage0BodiesCallContext *call
                 dxBody *b = *bodycurr;
                 if ((b->flags & dxBodyNoGravity) == 0) {
 #ifdef FEATFLOWLIB
-                    b->facc[2] += b->relMass * b->mass.mass * gravity_z;
+                    b->facc[2] += b->relMass * gravity_z;
+                    //printf("%f * %f * %f = %f \n", b->relMass , (1./b->mass.mass) , gravity_z,b->facc[2]);
 #else
                     b->facc[2] += b->mass.mass * gravity_z;
 #endif 
