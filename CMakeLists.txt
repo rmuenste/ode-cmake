@@ -267,8 +267,8 @@ add_library(ode ${ODE_SRC_CPP} ${ODE_SRC_C} ${ODE_HDR} ${OPCODE_SRC} ${ODE_JOINT
 target_include_directories(ode PRIVATE . ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/ou/include  ${CMAKE_CURRENT_SOURCE_DIR}/OPCODE ${CMAKE_CURRENT_SOURCE_DIR}/ode/src ${CMAKE_CURRENT_SOURCE_DIR}/libccd/src)
 target_compile_definitions(ode PRIVATE dDOUBLE=1 CCD_DOUBLE=1)
 
-add_executable(demo_cylvssphere ode/demo/demo_cylvssphere.cpp)
-target_include_directories(demo_cylvssphere PRIVATE . ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/ou/include  ${CMAKE_CURRENT_SOURCE_DIR}/OPCODE ${CMAKE_CURRENT_SOURCE_DIR}/libccd/src ${CMAKE_CURRENT_SOURCE_DIR}/ode/src/joints ${CMAKE_CURRENT_SOURCE_DIR}/OPCODE/Ice)
-target_compile_definitions(demo_cylvssphere PRIVATE dDOUBLE=1 CCD_DOUBLE=1)
-target_link_libraries(demo_cylvssphere PRIVATE ode)
+#add_executable(demo_cylvssphere ode/demo/demo_cylvssphere.cpp)
+#target_include_directories(demo_cylvssphere PRIVATE . ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/ou/include  ${CMAKE_CURRENT_SOURCE_DIR}/OPCODE ${CMAKE_CURRENT_SOURCE_DIR}/libccd/src ${CMAKE_CURRENT_SOURCE_DIR}/ode/src/joints ${CMAKE_CURRENT_SOURCE_DIR}/OPCODE/Ice)
+#target_compile_definitions(demo_cylvssphere PRIVATE dDOUBLE=1 CCD_DOUBLE=1)
+#target_link_libraries(demo_cylvssphere PRIVATE ode)
 
